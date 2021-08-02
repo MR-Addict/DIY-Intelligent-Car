@@ -106,12 +106,24 @@ void Route_Tracing() {
     Forword();
   }
   else if (Left_Value == 1 && Center_Value == 0 && Right_Value == 0) {
+    message = 'R';
+    Right();
+  }
+  else if (Left_Value == 0 && Center_Value == 0 && Right_Value == 1) {
     message = 'L';
     Left();
   }
-  else if (Left_Value == 0 && Center_Value == 0 && Right_Value == 1) {
+  else if (Left_Value == 1 && Center_Value == 1 && Right_Value == 0) {
+    message = 'L';
+    Left();
+  }
+  else if (Left_Value == 0 && Center_Value == 1 && Right_Value == 1) {
     message = 'R';
-    Right();
+    Right(); 
+  }
+  else {
+    message = 'S';
+    Stop();
   }
 }
 
